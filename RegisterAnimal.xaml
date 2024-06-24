@@ -1,0 +1,59 @@
+﻿<Window x:Class="Система_догляду_за_тваринами.RegisterAnimal"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:Система_догляду_за_тваринами.Converters"
+        Title="Register Animal" Height="450" Width="400">
+
+    <Window.Resources>
+        <local:StringToVisibilityConverter x:Key="StringToVisibilityConverter"/>
+    </Window.Resources>
+
+    <Grid Margin="10">
+        <StackPanel>
+            <Grid Margin="5">
+                <TextBox x:Name="NameTextBox" />
+                <TextBlock Text="Ім'я" IsHitTestVisible="False" 
+                           Foreground="Gray" 
+                           Margin="5,0,0,0" VerticalAlignment="Center"
+                           Visibility="{Binding Text, ElementName=NameTextBox, Converter={StaticResource StringToVisibilityConverter}}"/>
+            </Grid>
+            <Grid Margin="5">
+                <TextBox x:Name="TypeTextBox" />
+                <TextBlock Text="Вид" IsHitTestVisible="False" 
+                           Foreground="Gray" 
+                           Margin="5,0,0,0" VerticalAlignment="Center"
+                           Visibility="{Binding Text, ElementName=TypeTextBox, Converter={StaticResource StringToVisibilityConverter}}"/>
+            </Grid>
+            <Grid Margin="5">
+                <TextBox x:Name="BreedTextBox" />
+                <TextBlock Text="Порода" IsHitTestVisible="False" 
+                           Foreground="Gray" 
+                           Margin="5,0,0,0" VerticalAlignment="Center"
+                           Visibility="{Binding Text, ElementName=BreedTextBox, Converter={StaticResource StringToVisibilityConverter}}"/>
+            </Grid>
+            <Grid Margin="5">
+                <TextBox x:Name="AgeTextBox" />
+                <TextBlock Text="Вік" IsHitTestVisible="False" 
+                           Foreground="Gray" 
+                           Margin="5,0,0,0" VerticalAlignment="Center"
+                           Visibility="{Binding Text, ElementName=AgeTextBox, Converter={StaticResource StringToVisibilityConverter}}"/>
+            </Grid>
+            <Grid Margin="5">
+                <TextBox x:Name="HealthStatusTextBox" />
+                <TextBlock Text="Стан здоров'я" IsHitTestVisible="False" 
+                           Foreground="Gray" 
+                           Margin="5,0,0,0" VerticalAlignment="Center"
+                           Visibility="{Binding Text, ElementName=HealthStatusTextBox, Converter={StaticResource StringToVisibilityConverter}}"/>
+            </Grid>
+            <Grid Margin="5">
+                <TextBox x:Name="DescriptionTextBox" />
+                <TextBlock Text="Опис" IsHitTestVisible="False" 
+                           Foreground="Gray" 
+                           Margin="5,0,0,0" VerticalAlignment="Center"
+                           Visibility="{Binding Text, ElementName=DescriptionTextBox, Converter={StaticResource StringToVisibilityConverter}}"/>
+            </Grid>
+            <Button Content="Зберегти та вийти у меню" Click="SaveAnimal_Click" Margin="5"/>
+            <Button Content="Вийти без зберігання" Click="ExitWithoutSaving_Click" Margin="5"/>
+        </StackPanel>
+    </Grid>
+</Window>
