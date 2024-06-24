@@ -1,4 +1,6 @@
-﻿using System;
+// This file is no longer needed for the program to work
+/*
+using System;
 using System.Globalization;
 using System.Windows;
 using System.Windows.Data;
@@ -22,3 +24,4 @@ namespace Система_догляду_за_тваринами.Converters
         }
     }
 }
+*/
