@@ -1,66 +1,58 @@
-﻿using Newtonsoft.Json;
-using System.Collections.Generic;
-using System.IO;
-using System.Windows;
-using static Система_догляду_за_тваринами.Animal_and_CareInfo;
+﻿using System.Windows;
+using System.Windows.Controls;
 
 namespace Система_догляду_за_тваринами
 {
     public partial class RegisterAnimal : Window
     {
-        private string dbFilePath = "animals_db.json";
-        private List<Animal> animals;
-
         public RegisterAnimal()
         {
             InitializeComponent();
-            LoadData();
         }
 
-        private void LoadData()
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-            if (File.Exists(dbFilePath))
-            {
-                var json = File.ReadAllText(dbFilePath);
-                animals = JsonConvert.DeserializeObject<List<Animal>>(json) ?? new List<Animal>();
-            }
-            else
-            {
-                animals = new List<Animal>();
-            }
-        }
+            TextBox textBox = sender as TextBox;
+            if (textBox == null) return;
 
-        private void SaveData()
-        {
-            var json = JsonConvert.SerializeObject(animals, Formatting.Indented);
-            File.WriteAllText(dbFilePath, json);
+            TextBlock placeholder = null;
+
+            switch (textBox.Name)
+            {
+                case "NameTextBox":
+                    placeholder = NamePlaceholder;
+                    break;
+                case "TypeTextBox":
+                    placeholder = TypePlaceholder;
+                    break;
+                case "BreedTextBox":
+                    placeholder = BreedPlaceholder;
+                    break;
+                case "AgeTextBox":
+                    placeholder = AgePlaceholder;
+                    break;
+                case "HealthStatusTextBox":
+                    placeholder = HealthStatusPlaceholder;
+                    break;
+                case "DescriptionTextBox":
+                    placeholder = DescriptionPlaceholder;
+                    break;
+            }
+
+            if (placeholder != null)
+            {
+                placeholder.Visibility = string.IsNullOrEmpty(textBox.Text) ? Visibility.Visible : Visibility.Collapsed;
+            }
         }
 
         private void SaveAnimal_Click(object sender, RoutedEventArgs e)
         {
-            var animal = new Animal
-            {
-                Name = NameTextBox.Text,
-                Type = TypeTextBox.Text,
-                Breed = BreedTextBox.Text,
-                Age = int.Parse(AgeTextBox.Text),
-                HealthStatus = HealthStatusTextBox.Text,
-                Description = DescriptionTextBox.Text
-            };
-
-            animals.Add(animal);
-            SaveData();
-
-            var mainWindow = new MainWindow();
-            mainWindow.Show();
-            this.Close();
+            // Ваша логіка для збереження даних
         }
 
         private void ExitWithoutSaving_Click(object sender, RoutedEventArgs e)
         {
-            var mainWindow = new MainWindow();
-            mainWindow.Show();
-            this.Close();
+            // Ваша логіка для виходу без збереження даних
         }
     }
 }

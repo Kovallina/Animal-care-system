@@ -64,7 +64,9 @@
     <Compile Include="RegisterAnimal.xaml.cs">
       <DependentUpon>RegisterAnimal.xaml</DependentUpon>
     </Compile>
-    <Compile Include="StringToVisibilityConverter.cs" />
+    <Compile Include="SearchAnimal.xaml.cs">
+      <DependentUpon>SearchAnimal.xaml</DependentUpon>
+    </Compile>
     <Page Include="AnimalList.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -83,6 +85,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="RegisterAnimal.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SearchAnimal.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
