@@ -1,20 +1,43 @@
-﻿using System.Windows;
+﻿using System.Collections.Generic;
+using System.Windows;
 using System.Windows.Controls;
 
 namespace Система_догляду_за_тваринами
 {
     public partial class RegisterAnimal : Window
     {
+        private List<Animal> animals;
+
         public RegisterAnimal()
         {
             InitializeComponent();
+            LoadAnimals();
+            InitializePlaceholders();
+        }
+
+        private void LoadAnimals()
+        {
+            animals = DatabaseHelper.LoadAnimals();
+        }
+
+        private void InitializePlaceholders()
+        {
+            UpdatePlaceholder(NameTextBox, NamePlaceholder);
+            UpdatePlaceholder(TypeTextBox, TypePlaceholder);
+            UpdatePlaceholder(BreedTextBox, BreedPlaceholder);
+            UpdatePlaceholder(AgeTextBox, AgePlaceholder);
+            UpdatePlaceholder(HealthStatusTextBox, HealthStatusPlaceholder);
+            UpdatePlaceholder(DescriptionTextBox, DescriptionPlaceholder);
+        }
+
+        private void UpdatePlaceholder(TextBox textBox, TextBlock placeholder)
+        {
+            placeholder.Visibility = string.IsNullOrEmpty(textBox.Text) ? Visibility.Visible : Visibility.Collapsed;
         }
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
             TextBox textBox = sender as TextBox;
-            if (textBox == null) return;
-
             TextBlock placeholder = null;
 
             switch (textBox.Name)
@@ -41,18 +64,36 @@ namespace Система_догляду_за_тваринами
 
             if (placeholder != null)
             {
-                placeholder.Visibility = string.IsNullOrEmpty(textBox.Text) ? Visibility.Visible : Visibility.Collapsed;
+                UpdatePlaceholder(textBox, placeholder);
             }
         }
 
         private void SaveAnimal_Click(object sender, RoutedEventArgs e)
         {
-            // Ваша логіка для збереження даних
+            var animal = new Animal
+            {
+                Id = animals.Count > 0 ? animals[animals.Count - 1].Id + 1 : 1,
+                Name = NameTextBox.Text,
+                Type = TypeTextBox.Text,
+                Breed = BreedTextBox.Text,
+                Age = AgeTextBox.Text,
+                HealthStatus = HealthStatusTextBox.Text,
+                Description = DescriptionTextBox.Text
+            };
+
+            animals.Add(animal);
+            DatabaseHelper.SaveAnimals(animals);
+
+            var mainWindow = new MainWindow();
+            mainWindow.Show();
+            this.Close();
         }
 
         private void ExitWithoutSaving_Click(object sender, RoutedEventArgs e)
         {
-            // Ваша логіка для виходу без збереження даних
+            var mainWindow = new MainWindow();
+            mainWindow.Show();
+            this.Close();
         }
     }
 }

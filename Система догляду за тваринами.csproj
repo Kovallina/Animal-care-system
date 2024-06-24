@@ -61,6 +61,7 @@
     <Compile Include="AnimalList.xaml.cs">
       <DependentUpon>AnimalList.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DatabaseHelper.cs" />
     <Compile Include="RegisterAnimal.xaml.cs">
       <DependentUpon>RegisterAnimal.xaml</DependentUpon>
     </Compile>
@@ -75,7 +76,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Compile Include="Animal and CareInfo.cs" />
+    <Compile Include="CareInfo.cs" />
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>

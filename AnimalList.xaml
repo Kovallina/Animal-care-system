@@ -1,12 +1,25 @@
 ﻿<Window x:Class="Система_догляду_за_тваринами.AnimalList"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Animal List" Height="450" Width="400">
+        Title="Список тварин" Height="450" Width="400"
+        WindowStartupLocation="CenterScreen">
+
     <Grid>
         <StackPanel>
-            <ListBox x:Name="AnimalsListBox" Margin="10" />
-            <Button Content="Пошук тварини" Click="SearchAnimal_Click" Margin="5"/>
-            <Button Content="Повернутись у меню" Click="BackToMenu_Click" Margin="5"/>
+            <ListView x:Name="AnimalsListView" Margin="10">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Ім'я" DisplayMemberBinding="{Binding Name}"/>
+                        <GridViewColumn Header="Вид" DisplayMemberBinding="{Binding Type}"/>
+                        <GridViewColumn Header="Порода" DisplayMemberBinding="{Binding Breed}"/>
+                        <GridViewColumn Header="Вік" DisplayMemberBinding="{Binding Age}"/>
+                        <GridViewColumn Header="Стан здоров'я" DisplayMemberBinding="{Binding HealthStatus}"/>
+                        <GridViewColumn Header="Опис" DisplayMemberBinding="{Binding Description}"/>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+            <Button Content="Пошук тварини" Click="SearchAnimal_Click" Margin="5" Width="140"/>
+            <Button Content="Повернутись у меню" Click="BackToMenu_Click" Margin="5" Width="140"/>
         </StackPanel>
     </Grid>
 </Window>

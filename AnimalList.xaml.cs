@@ -1,9 +1,12 @@
-﻿using System.Windows;
+﻿using System.Collections.Generic;
+using System.Windows;
 
 namespace Система_догляду_за_тваринами
 {
     public partial class AnimalList : Window
     {
+        private List<Animal> animals;
+
         public AnimalList()
         {
             InitializeComponent();
@@ -12,7 +15,8 @@ namespace Система_догляду_за_тваринами
 
         private void LoadAnimals()
         {
-            // Загружаем список животных из локальной базы данных
+            animals = DatabaseHelper.LoadAnimals();
+            AnimalsListView.ItemsSource = animals;
         }
 
         private void SearchAnimal_Click(object sender, RoutedEventArgs e)

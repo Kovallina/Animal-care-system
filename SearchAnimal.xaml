@@ -1,47 +1,43 @@
 ﻿<Window x:Class="Система_догляду_за_тваринами.SearchAnimal"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Search Animal" Height="450" Width="400">
+        Title="Search Animal" Height="450" Width="400"
+        WindowStartupLocation="CenterScreen">
 
     <Grid Margin="10">
         <StackPanel>
             <Grid Margin="5">
                 <TextBox x:Name="NameTextBox" TextChanged="TextBox_TextChanged"/>
-                <TextBlock Text="Ім'я" IsHitTestVisible="False"
-                           Foreground="Gray" Margin="5,0,0,0"
-                           VerticalAlignment="Center"/>
+                <TextBlock x:Name="NamePlaceholder" Text="Ім'я" IsHitTestVisible="False"
+                           Foreground="Gray" Margin="5,0,0,0" VerticalAlignment="Center"/>
             </Grid>
             <Grid Margin="5">
                 <TextBox x:Name="TypeTextBox" TextChanged="TextBox_TextChanged"/>
-                <TextBlock Text="Вид" IsHitTestVisible="False"
-                           Foreground="Gray" Margin="5,0,0,0"
-                           VerticalAlignment="Center"/>
+                <TextBlock x:Name="TypePlaceholder" Text="Вид" IsHitTestVisible="False"
+                           Foreground="Gray" Margin="5,0,0,0" VerticalAlignment="Center"/>
             </Grid>
             <Grid Margin="5">
                 <TextBox x:Name="BreedTextBox" TextChanged="TextBox_TextChanged"/>
-                <TextBlock Text="Порода" IsHitTestVisible="False"
-                           Foreground="Gray" Margin="5,0,0,0"
-                           VerticalAlignment="Center"/>
+                <TextBlock x:Name="BreedPlaceholder" Text="Порода" IsHitTestVisible="False"
+                           Foreground="Gray" Margin="5,0,0,0" VerticalAlignment="Center"/>
             </Grid>
             <Grid Margin="5">
                 <TextBox x:Name="AgeTextBox" TextChanged="TextBox_TextChanged"/>
-                <TextBlock Text="Вік" IsHitTestVisible="False"
-                           Foreground="Gray" Margin="5,0,0,0"
-                           VerticalAlignment="Center"/>
+                <TextBlock x:Name="AgePlaceholder" Text="Вік" IsHitTestVisible="False"
+                           Foreground="Gray" Margin="5,0,0,0" VerticalAlignment="Center"/>
             </Grid>
             <Grid Margin="5">
                 <TextBox x:Name="HealthStatusTextBox" TextChanged="TextBox_TextChanged"/>
-                <TextBlock Text="Стан здоров'я" IsHitTestVisible="False"
-                           Foreground="Gray" Margin="5,0,0,0"
-                           VerticalAlignment="Center"/>
+                <TextBlock x:Name="HealthStatusPlaceholder" Text="Стан здоров'я" IsHitTestVisible="False"
+                           Foreground="Gray" Margin="5,0,0,0" VerticalAlignment="Center"/>
             </Grid>
             <Grid Margin="5">
                 <TextBox x:Name="DescriptionTextBox" TextChanged="TextBox_TextChanged"/>
-                <TextBlock Text="Опис" IsHitTestVisible="False"
-                           Foreground="Gray" Margin="5,0,0,0"
-                           VerticalAlignment="Center"/>
+                <TextBlock x:Name="DescriptionPlaceholder" Text="Опис" IsHitTestVisible="False"
+                           Foreground="Gray" Margin="5,0,0,0" VerticalAlignment="Center"/>
             </Grid>
-            <Button Content="Пошук" Click="SearchAnimal_Click" Margin="5"/>
+            <Button Content="Пошук" Click="SearchAnimal_Click" Margin="5" Width="100"/>
+            <Button Content="Повернутись до списку" Click="ExitWithList_Click" Margin="5" Width="150"/>
             <ListView x:Name="SearchResultsListView" Margin="5">
                 <ListView.View>
                     <GridView>

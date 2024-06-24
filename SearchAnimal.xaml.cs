@@ -7,15 +7,23 @@ namespace Система_догляду_за_тваринами
 {
     public partial class SearchAnimal : Window
     {
+        private List<Animal> animals;
+
         public SearchAnimal()
         {
             InitializeComponent();
+            LoadAnimals();
+        }
+
+        private void LoadAnimals()
+        {
+            animals = DatabaseHelper.LoadAnimals();
         }
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
             TextBox textBox = sender as TextBox;
-            TextBlock textBlock = (TextBlock)FindName(textBox.Name.Replace("TextBox", "TextBlock"));
+            TextBlock textBlock = (TextBlock)FindName(textBox.Name.Replace("TextBox", "Placeholder"));
             textBlock.Visibility = string.IsNullOrWhiteSpace(textBox.Text) ? Visibility.Visible : Visibility.Collapsed;
         }
 
@@ -31,32 +39,32 @@ namespace Система_догляду_за_тваринами
             var searchResults = SearchAnimals(name, type, breed, age, healthStatus, description);
             SearchResultsListView.ItemsSource = searchResults;
         }
-
         private List<Animal> SearchAnimals(string name, string type, string breed, string age, string healthStatus, string description)
         {
-            // Приклад даних для пошуку. Замініть цей код вашим джерелом даних.
-            var animals = new List<Animal>
-            {
-                new Animal { Name = "Барсик", Type = "Кішка", Breed = "Сіамська", Age = "3", HealthStatus = "Здоровий", Description = "Лагідний" },
-                new Animal { Name = "Шарик", Type = "Собака", Breed = "Бульдог", Age = "5", HealthStatus = "Потребує лікування", Description = "Активний" },
-                // Додайте більше даних тут...
-            };
-
             var filteredAnimals = animals.Where(a =>
-                (string.IsNullOrEmpty(name) || a.Name.Contains(name)) &&
-                (string.IsNullOrEmpty(type) || a.Type.Contains(type)) &&
-                (string.IsNullOrEmpty(breed) || a.Breed.Contains(breed)) &&
-                (string.IsNullOrEmpty(age) || a.Age.Contains(age)) &&
-                (string.IsNullOrEmpty(healthStatus) || a.HealthStatus.Contains(healthStatus)) &&
-                (string.IsNullOrEmpty(description) || a.Description.Contains(description))
+                (string.IsNullOrEmpty(name) || a.Name.IndexOf(name, System.StringComparison.OrdinalIgnoreCase) >= 0) &&
+                (string.IsNullOrEmpty(type) || a.Type.IndexOf(type, System.StringComparison.OrdinalIgnoreCase) >= 0) &&
+                (string.IsNullOrEmpty(breed) || a.Breed.IndexOf(breed, System.StringComparison.OrdinalIgnoreCase) >= 0) &&
+                (string.IsNullOrEmpty(age) || a.Age.IndexOf(age, System.StringComparison.OrdinalIgnoreCase) >= 0) &&
+                (string.IsNullOrEmpty(healthStatus) || a.HealthStatus.IndexOf(healthStatus, System.StringComparison.OrdinalIgnoreCase) >= 0) &&
+                (string.IsNullOrEmpty(description) || a.Description.IndexOf(description, System.StringComparison.OrdinalIgnoreCase) >= 0)
             ).ToList();
 
             return filteredAnimals;
         }
-    }
 
-    public class Animal
+        private void ExitWithList_Click(object sender, RoutedEventArgs e)
+        {
+            var animalList = new AnimalList();
+            animalList.Show();
+            this.Close();
+        }
+    }
+}
+
+public class Animal
     {
+        public int Id { get; set; }
         public string Name { get; set; }
         public string Type { get; set; }
         public string Breed { get; set; }
@@ -64,4 +72,4 @@ namespace Система_догляду_за_тваринами
         public string HealthStatus { get; set; }
         public string Description { get; set; }
     }
-}
+

@@ -1,0 +1,25 @@
+F:\Visual Studio\repos\Система догляду за тваринами\obj\Debug\Система догляду за тваринами.csproj.AssemblyReference.cache
+F:\Visual Studio\repos\Система догляду за тваринами\obj\Debug\AnimalList.baml
+F:\Visual Studio\repos\Система догляду за тваринами\obj\Debug\MainWindow.baml
+F:\Visual Studio\repos\Система догляду за тваринами\obj\Debug\AnimalList.g.cs
+F:\Visual Studio\repos\Система догляду за тваринами\obj\Debug\MainWindow.g.cs
+F:\Visual Studio\repos\Система догляду за тваринами\obj\Debug\RegisterAnimal.g.cs
+F:\Visual Studio\repos\Система догляду за тваринами\obj\Debug\App.g.cs
+F:\Visual Studio\repos\Система догляду за тваринами\obj\Debug\Система_догляду_за_тваринами_MarkupCompile.cache
+F:\Visual Studio\repos\Система догляду за тваринами\obj\Debug\Система_догляду_за_тваринами_MarkupCompile.lref
+F:\Visual Studio\repos\Система догляду за тваринами\obj\Debug\RegisterAnimal.baml
+F:\Visual Studio\repos\Система догляду за тваринами\obj\Debug\SearchAnimal.baml
+F:\Visual Studio\repos\Система догляду за тваринами\obj\Debug\SearchAnimal.g.cs
+F:\Visual Studio\repos\Система догляду за тваринами\obj\Debug\Система_догляду_за_тваринами.exe
+F:\Visual Studio\repos\Система догляду за тваринами\obj\Debug\Система_догляду_за_тваринами.pdb
+F:\Visual Studio\repos\Система догляду за тваринами\bin\Debug\Система_догляду_за_тваринами.exe.config
+F:\Visual Studio\repos\Система догляду за тваринами\bin\Debug\Система_догляду_за_тваринами.exe
+F:\Visual Studio\repos\Система догляду за тваринами\bin\Debug\Система_догляду_за_тваринами.pdb
+F:\Visual Studio\repos\Система догляду за тваринами\bin\Debug\Newtonsoft.Json.dll
+F:\Visual Studio\repos\Система догляду за тваринами\bin\Debug\Newtonsoft.Json.xml
+F:\Visual Studio\repos\Система догляду за тваринами\obj\Debug\App.baml
+F:\Visual Studio\repos\Система догляду за тваринами\obj\Debug\Система_догляду_за_тваринами.g.resources
+F:\Visual Studio\repos\Система догляду за тваринами\obj\Debug\Система_догляду_за_тваринами.Properties.Resources.resources
+F:\Visual Studio\repos\Система догляду за тваринами\obj\Debug\Система догляду за тваринами.csproj.GenerateResource.cache
+F:\Visual Studio\repos\Система догляду за тваринами\obj\Debug\Система догляду за тваринами.csproj.CoreCompileInputs.cache
+F:\Visual Studio\repos\Система догляду за тваринами\obj\Debug\Система .3D886AD2.Up2Date
