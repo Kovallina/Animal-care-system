@@ -14,12 +14,18 @@
                         <GridViewColumn Header="Порода" DisplayMemberBinding="{Binding Breed}"/>
                         <GridViewColumn Header="Вік" DisplayMemberBinding="{Binding Age}"/>
                         <GridViewColumn Header="Стан здоров'я" DisplayMemberBinding="{Binding HealthStatus}"/>
-                        <GridViewColumn Header="Опис" DisplayMemberBinding="{Binding Description}"/>
+                        <GridViewColumn Header="Опис" Width="110">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Description}" TextWrapping="Wrap" />
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
                     </GridView>
                 </ListView.View>
             </ListView>
-            <Button Content="Пошук тварини" Click="SearchAnimal_Click" Margin="5" Width="140"/>
-            <Button Content="Повернутись у меню" Click="BackToMenu_Click" Margin="5" Width="140"/>
+            <Button Content="Пошук тварини" Click="SearchAnimal_Click" Margin="5" Height="25" Width="140"/>
+            <Button Content="Повернутись у меню" Click="BackToMenu_Click" Margin="5" Height="25" Width="140"/>
         </StackPanel>
     </Grid>
 </Window>
