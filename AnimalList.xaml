@@ -1,12 +1,12 @@
 ﻿<Window x:Class="Система_догляду_за_тваринами.AnimalList"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Список тварин" Height="450" Width="400"
+        Title="Список тварин" Height="400" Width="500"
         WindowStartupLocation="CenterScreen">
 
     <Grid>
         <StackPanel>
-            <ListView x:Name="AnimalsListView" Margin="10">
+            <ListView x:Name="AnimalsListView" Margin="10" SelectionChanged="AnimalsListView_SelectionChanged">
                 <ListView.View>
                     <GridView>
                         <GridViewColumn Header="Ім'я" DisplayMemberBinding="{Binding Name}"/>

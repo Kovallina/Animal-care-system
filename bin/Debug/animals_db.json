@@ -4,9 +4,10 @@
     "Name": "Мурчик",
     "Type": "Кіт",
     "Breed": "Американський керл",
-    "Age": "4",
-    "HealthStatus": "Здоровий",
-    "Description": "Мій мурчик котик"
+    "Age": "13",
+    "HealthStatus": "Мертвий",
+    "Description": "Мій мурчик колишній найкращий котик",
+    "Notes": "Нажаль вже на тому світі(\r\nМях"
   },
   {
     "Id": 2,
@@ -15,7 +16,8 @@
     "Breed": "Сільська",
     "Age": "7",
     "HealthStatus": "Здорова",
-    "Description": "Бабусі собака"
+    "Description": "Бабусі собака",
+    "Notes": ""
   },
   {
     "Id": 3,
@@ -24,6 +26,7 @@
     "Breed": "Британський",
     "Age": "5",
     "HealthStatus": "Здоровий",
-    "Description": "Віки кіт"
+    "Description": "Віки кіт",
+    "Notes": null
   }
 ]

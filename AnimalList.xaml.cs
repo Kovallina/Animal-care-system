@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Windows;
+using System.Windows.Controls;
 
 namespace Система_догляду_за_тваринами
 {
@@ -31,6 +32,17 @@ namespace Система_догляду_за_тваринами
             var mainWindow = new MainWindow();
             mainWindow.Show();
             this.Close();
+        }
+
+        private void AnimalsListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var selectedAnimal = (Animal)AnimalsListView.SelectedItem;
+            if (selectedAnimal != null)
+            {
+                var animalDetailsWindow = new AnimalDetails(selectedAnimal);
+                animalDetailsWindow.Show();
+                this.Close();
+            }
         }
     }
 }

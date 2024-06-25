@@ -23,3 +23,5 @@ F:\Visual Studio\repos\Система догляду за тваринами\obj
 F:\Visual Studio\repos\Система догляду за тваринами\obj\Debug\Система догляду за тваринами.csproj.GenerateResource.cache
 F:\Visual Studio\repos\Система догляду за тваринами\obj\Debug\Система догляду за тваринами.csproj.CoreCompileInputs.cache
 F:\Visual Studio\repos\Система догляду за тваринами\obj\Debug\Система .3D886AD2.Up2Date
+F:\Visual Studio\repos\Система догляду за тваринами\obj\Debug\AnimalDetails.baml
+F:\Visual Studio\repos\Система догляду за тваринами\obj\Debug\AnimalDetails.g.cs

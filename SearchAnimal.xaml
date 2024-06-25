@@ -1,14 +1,14 @@
 ﻿<Window x:Class="Система_догляду_за_тваринами.SearchAnimal"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Search Animal" Height="450" Width="400"
+        Title="Пошук тварини" Height="450" Width="500"
         WindowStartupLocation="CenterScreen">
 
     <Grid Margin="10">
         <StackPanel>
             <Grid Margin="5">
                 <TextBox x:Name="NameTextBox" TextChanged="TextBox_TextChanged"/>
-                <TextBlock x:Name="NamePlaceholder" Text="Ім'я" IsHitTestVisible="False"
+                <TextBlock x:Name="NamePlaceholder" Text="Ім'я"  IsHitTestVisible="False"
                            Foreground="Gray" Margin="5,0,0,0" VerticalAlignment="Center"/>
             </Grid>
             <Grid Margin="5">
@@ -38,7 +38,7 @@
             </Grid>
             <Button Content="Пошук" Click="SearchAnimal_Click" Margin="5" Width="100"/>
             <Button Content="Повернутись до списку" Click="ExitWithList_Click" Margin="5" Width="150"/>
-            <ListView x:Name="SearchResultsListView" Margin="5">
+            <ListView x:Name="SearchResultsListView" Margin="5" SelectionChanged="SearchResultsListView_SelectionChanged">
                 <ListView.View>
                     <GridView>
                         <GridViewColumn Header="Ім'я" DisplayMemberBinding="{Binding Name}"/>

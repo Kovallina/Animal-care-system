@@ -53,7 +53,18 @@ namespace Система_догляду_за_тваринами
             return filteredAnimals;
         }
 
-        private void ExitWithList_Click(object sender, RoutedEventArgs e)
+        private void SearchResultsListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var selectedAnimal = (Animal)SearchResultsListView.SelectedItem;
+            if (selectedAnimal != null)
+            {
+                var animalDetailsWindow = new AnimalDetails(selectedAnimal);
+                animalDetailsWindow.Show();
+                this.Close();
+            }
+        }
+
+            private void ExitWithList_Click(object sender, RoutedEventArgs e)
         {
             var animalList = new AnimalList();
             animalList.Show();
@@ -62,14 +73,5 @@ namespace Система_догляду_за_тваринами
     }
 }
 
-public class Animal
-    {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public string Type { get; set; }
-        public string Breed { get; set; }
-        public string Age { get; set; }
-        public string HealthStatus { get; set; }
-        public string Description { get; set; }
-    }
+
 
